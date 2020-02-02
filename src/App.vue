@@ -1,3 +1,4 @@
+<!-- This is Mother Component -->
 <template>
   <div id="app">
     
@@ -7,11 +8,11 @@
       <div class="row">
 
         <div class="col-sm-9">
-          <Inventory :items="items"></Inventory>
+          <Inventory @newItemAdded="addCartItem" :items="items"></Inventory>
         </div>
 
         <div class="col-sm-3">
-            <Cart></Cart>
+            <Cart :items="cart"></Cart>
         </div>
       
       </div>
@@ -33,12 +34,23 @@ export default {
   },
   data() {
     return {
-      items:[]
+      items:[],
+      cart:[{ //for dummy data (not neccessary)
+        id:1,
+        title:'test',
+        price:10.50,
+        photo:"http://dummyimage.com/250x250.png/dddddd/000000",
+      }]
     }
   },
   mounted() {
     //console.log(data)
     this.items = data
+  },
+  methods: {
+    addCartItem(item){
+      this.cart.push(item) //push into cart
+    }
   },
 }
 </script>

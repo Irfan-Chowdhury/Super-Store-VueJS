@@ -1,3 +1,4 @@
+<!-- This is Child Component -->
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Super Store</a>
