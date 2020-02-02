@@ -7,7 +7,7 @@
       <div class="row">
 
         <div class="col-sm-9">
-          <Inventory></Inventory>
+          <Inventory :items="items"></Inventory>
         </div>
 
         <div class="col-sm-3">
@@ -23,13 +23,23 @@
 import Navbar from './components/Navbar'
 import Cart from './components/Cart'
 import Inventory from './components/Inventory'
+import data from './data.js'
 
 export default {
   components:{
     Navbar,
     Cart,
     Inventory 
-  }
+  },
+  data() {
+    return {
+      items:[]
+    }
+  },
+  mounted() {
+    //console.log(data)
+    this.items = data
+  },
 }
 </script>
 
