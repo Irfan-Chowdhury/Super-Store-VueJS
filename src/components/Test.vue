@@ -1,7 +1,7 @@
 <!-- Testing Purpose -->
 
 <template>
-    <h3>Hello Router</h3>
+    <h3>Test Router {{ $route.params.id }}</h3>
 </template>
 
 <script>

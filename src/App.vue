@@ -2,6 +2,15 @@
 <template>
   <div id="app">
     
+    <!-- These lines are only for Testing purpose -->
+    <router-link :to="{path: '/'}">Home</router-link>
+    <router-link :to="{path: '/test/1'}">Test1</router-link>
+    <router-link :to="{path: '/test/2'}">Test2</router-link>
+    <router-link :to="{path: '/test/3'}">Test3</router-link>
+
+    <router-view></router-view>
+    <!-- --------------- xxxxxx ------------------ -->
+
     <Navbar @search="search"></Navbar>
 
     <div class="container-fluid p-3">
