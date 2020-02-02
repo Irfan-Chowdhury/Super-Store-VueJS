@@ -12,7 +12,7 @@
         </div>
 
         <div class="col-sm-3">
-            <Cart :items="cart"></Cart>
+            <Cart @itemRemoved="removeItem" :items="cart"></Cart>
         </div>
       
       </div>
@@ -35,12 +35,7 @@ export default {
   data() {
     return {
       items:[],
-      cart:[{ //for dummy data (not neccessary)
-        id:1,
-        title:'test',
-        price:10.50,
-        photo:"http://dummyimage.com/250x250.png/dddddd/000000",
-      }]
+      cart:[]
     }
   },
   mounted() {
@@ -50,6 +45,9 @@ export default {
   methods: {
     addCartItem(item){
       this.cart.push(item) //push into cart
+    },
+    removeItem(index){
+      this.cart.splice(index,1) //1 means- every click 1 item delete
     }
   },
 }
